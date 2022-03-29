@@ -8,9 +8,22 @@ terraform {
       version = "=2.97.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name = "terraform-storage-rg"
+    storage_account_name = "terraformstate203"
+    container_name = "tfstatefiles"
+    key = "network-terraform.tfstate"
+  }
 }
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
+}
+
+resource "random_string" "myrandom" {
+  length = 6
+  upper = false
+  special = false
+  number = false 
 }

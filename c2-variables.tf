@@ -5,7 +5,7 @@ variable "business_unit" {
 
 variable "environment" {
   type = string
-  default = "qa"
+  default = "dev"
 }
 
 variable "resource_group_name" {
@@ -23,6 +23,16 @@ variable "virtual_network_name" {
   default = "myvnet"
 }
 
+variable "subnet_name" {
+  type = string
+}
+
+variable "publicip_name" {
+  type = string
+}
+variable "network_interface_name" {
+  type = string
+}
 variable "vnet_address_space_dev" {
   type = list(string)
   default = [ "10.0.0.0/16" ]
